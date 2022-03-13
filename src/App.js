@@ -1,21 +1,26 @@
 import './App.css';
-import AddWilder from './components/AddWilder';
-import Card from './components/card';
-import { Container } from './style/style';
+import Card from './components/Card';
+import NavBar from './components/Navbar';
+import ContextProvider from './context/NavBarContext';
+import { Section, Spacer } from './style/style';
+import React from 'react';
 
 function App() {
   return (
-    // <div className='containder'>
     <>
-      <Container>
-        <h1>Wilders Book</h1>
-      </Container>
-      <Container>
-        <Card />
-      </Container>
-      <Container>
-        <AddWilder />
-      </Container>
+      <ContextProvider>
+        <NavBar />
+        <Spacer />
+        <Section>
+          <h1>Wilders Book</h1>
+        </Section>
+        <Section>
+          <Card />
+        </Section>
+        <Section>
+          
+        </Section>
+      </ContextProvider>
     </>
   );
 }
